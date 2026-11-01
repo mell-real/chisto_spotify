@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пять треков Spotify</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #f9f9fc 0%, #eef1f7 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .players-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .player-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 32px;
+            padding: 1.6rem 1.6rem 1.8rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25),
+                        0 4px 12px rgba(0, 0, 0, 0.05),
+                        inset 0 1px 1px rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            transition: transform 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .player-card:hover {
+            transform: scale(1.005);
+        }
+
+        .spotify-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        iframe {
+            display: block;
+            width: 100%;
+            border: none;
+            border-radius: 20px;
+            background-color: #121212;
+        }
+
+        .caption {
+            text-align: center;
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.4px;
+            color: #2c3e50;
+            opacity: 0.75;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .caption svg {
+            width: 18px;
+            height: 18px;
+            fill: #1DB954;
+            opacity: 0.9;
+        }
+
+        .track-number {
+            display: inline-block;
+            background: #1DB954;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.15rem 0.5rem;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            opacity: 0.85;
+        }
+
+        /* адаптивность */
+        @media (max-width: 900px) {
+            .players-grid {
+                grid-template-columns: 1fr;
+                gap: 1.6rem;
+                max-width: 600px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+
+            .player-card {
+                padding: 1rem 1rem 1.25rem;
+                border-radius: 24px;
+            }
+
+            .spotify-wrapper {
+                border-radius: 16px;
+            }
+
+            iframe {
+                border-radius: 16px;
+            }
+
+            .caption {
+                margin-top: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="players-grid">
+        <!-- Трек 1 -->
+        <div class="player-card">
+            <div class="spotify-wrapper">
+                <iframe 
+                    data-testid="embed-iframe" 
+                    style="border-radius: 20px;" 
+                    src="https://open.spotify.com/embed/track/4VL8Pc3eUD0dOE7nN5TglV?utm_source=generator&si=d5227dab64ef485b" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"
+                    title="Spotify плеер: трек 1"
+                ></iframe>
+            </div>
+            <div class="caption">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.4-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.1-.9 7.6-.4 10.4 1.3.3.2.4.6.2.9zm1.5-3.3c-.3.4-.7.5-1.1.3-2.9-1.8-7.3-2.3-10.7-1.2-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 3.9-1.2 8.7-.7 12 1.3.4.2.5.7.2 1zm.1-3.5c-3.4-2-9.1-2.2-12.4-1.2-.4.1-.9-.1-1-.6-.1-.4.1-.9.6-1 3.8-1.1 10.1-.9 14 1.3.4.2.5.7.3 1.1-.2.4-.7.5-1.1.3z"/>
+                </svg>
+                <span>трек 1</span>
+                <span class="track-number">01</span>
+            </div>
+        </div>
+
+        <!-- Трек 2 -->
+        <div class="player-card">
+            <div class="spotify-wrapper">
+                <iframe 
+                    data-testid="embed-iframe" 
+                    style="border-radius: 20px;" 
+                    src="https://open.spotify.com/embed/track/7ovUcF5uHTBRzUpB6ZOmvt?utm_source=generator&si=40b3dc63cfda4bd5" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"
+                    title="Spotify плеер: трек 2"
+                ></iframe>
+            </div>
+            <div class="caption">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.4-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.1-.9 7.6-.4 10.4 1.3.3.2.4.6.2.9zm1.5-3.3c-.3.4-.7.5-1.1.3-2.9-1.8-7.3-2.3-10.7-1.2-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 3.9-1.2 8.7-.7 12 1.3.4.2.5.7.2 1zm.1-3.5c-3.4-2-9.1-2.2-12.4-1.2-.4.1-.9-.1-1-.6-.1-.4.1-.9.6-1 3.8-1.1 10.1-.9 14 1.3.4.2.5.7.3 1.1-.2.4-.7.5-1.1.3z"/>
+                </svg>
+                <span>трек 2</span>
+                <span class="track-number">02</span>
+            </div>
+        </div>
+
+        <!-- Трек 3 -->
+        <div class="player-card">
+            <div class="spotify-wrapper">
+                <iframe 
+                    data-testid="embed-iframe" 
+                    style="border-radius: 20px;" 
+                    src="https://open.spotify.com/embed/track/3K4CoapqZvLMtUtBYFoW8b?utm_source=generator&si=8cc4ba4aa2dd41f0" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"
+                    title="Spotify плеер: трек 3"
+                ></iframe>
+            </div>
+            <div class="caption">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.4-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.1-.9 7.6-.4 10.4 1.3.3.2.4.6.2.9zm1.5-3.3c-.3.4-.7.5-1.1.3-2.9-1.8-7.3-2.3-10.7-1.2-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 3.9-1.2 8.7-.7 12 1.3.4.2.5.7.2 1zm.1-3.5c-3.4-2-9.1-2.2-12.4-1.2-.4.1-.9-.1-1-.6-.1-.4.1-.9.6-1 3.8-1.1 10.1-.9 14 1.3.4.2.5.7.3 1.1-.2.4-.7.5-1.1.3z"/>
+                </svg>
+                <span>трек 3</span>
+                <span class="track-number">03</span>
+            </div>
+        </div>
+
+        <!-- Трек 4 -->
+        <div class="player-card">
+            <div class="spotify-wrapper">
+                <iframe 
+                    data-testid="embed-iframe" 
+                    style="border-radius: 20px;" 
+                    src="https://open.spotify.com/embed/track/4nKRZAONxGgcKCMin730Ai?utm_source=generator&si=4f0a0af3abd54c42" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"
+                    title="Spotify плеер: трек 4"
+                ></iframe>
+            </div>
+            <div class="caption">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.4-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.1-.9 7.6-.4 10.4 1.3.3.2.4.6.2.9zm1.5-3.3c-.3.4-.7.5-1.1.3-2.9-1.8-7.3-2.3-10.7-1.2-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 3.9-1.2 8.7-.7 12 1.3.4.2.5.7.2 1zm.1-3.5c-3.4-2-9.1-2.2-12.4-1.2-.4.1-.9-.1-1-.6-.1-.4.1-.9.6-1 3.8-1.1 10.1-.9 14 1.3.4.2.5.7.3 1.1-.2.4-.7.5-1.1.3z"/>
+                </svg>
+                <span>трек 4</span>
+                <span class="track-number">04</span>
+            </div>
+        </div>
+
+        <!-- Трек 5 -->
+        <div class="player-card">
+            <div class="spotify-wrapper">
+                <iframe 
+                    data-testid="embed-iframe" 
+                    style="border-radius: 20px;" 
+                    src="https://open.spotify.com/embed/track/4cnHCfESxHOfUpquqKWsoc?utm_source=generator&si=f7db8ab51bf24917" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"
+                    title="Spotify плеер: трек 5"
+                ></iframe>
+            </div>
+            <div class="caption">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.4-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.1-.9 7.6-.4 10.4 1.3.3.2.4.6.2.9zm1.5-3.3c-.3.4-.7.5-1.1.3-2.9-1.8-7.3-2.3-10.7-1.2-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 3.9-1.2 8.7-.7 12 1.3.4.2.5.7.2 1zm.1-3.5c-3.4-2-9.1-2.2-12.4-1.2-.4.1-.9-.1-1-.6-.1-.4.1-.9.6-1 3.8-1.1 10.1-.9 14 1.3.4.2.5.7.3 1.1-.2.4-.7.5-1.1.3z"/>
+                </svg>
+                <span>трек 5</span>
+                <span class="track-number">05</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
